@@ -1,4 +1,4 @@
-# chothoid_arc_turn
+# clothoid_arc_turn
 
 Currently binary distributed. The source code will be released after acceptance.
 
