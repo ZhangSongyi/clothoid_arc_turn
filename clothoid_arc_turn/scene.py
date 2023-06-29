@@ -117,11 +117,12 @@ class Scene:
     def curvatureProfile     (self) -> npt.NDArray[np.float64]:
         return np.array([
             [0, 0],
-            [self.turn_params.entering_ls, self.turn_params.curvature],
-            [self.turn_params.entering_ls + self.turn_params.entering_lc, self.turn_params.curvature],
-            [self.turn_params.entering_ls + self.turn_params.entering_lc + self.turn_params.leaving_lc, self.turn_params.curvature],
-            [self.turn_params.entering_ls + self.turn_params.entering_lc + self.turn_params.leaving_lc + self.turn_params.leaving_ls, 0],
-            [self.turn_params.entering_ls + self.turn_params.entering_lc + self.turn_params.leaving_lc + self.turn_params.leaving_ls + self.triangle_params.leaving_ll, 0]
+            [self.triangle_params.entering_ll, 0]
+            [self.triangle_params.entering_ll + self.turn_params.entering_ls, self.turn_params.curvature],
+            [self.triangle_params.entering_ll + self.turn_params.entering_ls + self.turn_params.entering_lc, self.turn_params.curvature],
+            [self.triangle_params.entering_ll + self.turn_params.entering_ls + self.turn_params.entering_lc + self.turn_params.leaving_lc, self.turn_params.curvature],
+            [self.triangle_params.entering_ll + self.turn_params.entering_ls + self.turn_params.entering_lc + self.turn_params.leaving_lc + self.turn_params.leaving_ls, 0],
+            [self.triangle_params.entering_ll + self.turn_params.entering_ls + self.turn_params.entering_lc + self.turn_params.leaving_lc + self.turn_params.leaving_ls + self.triangle_params.leaving_ll, 0]
         ], dtype=np.float64)
 
     # ======
